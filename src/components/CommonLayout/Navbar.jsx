@@ -23,7 +23,7 @@ const Navbar = () => {
           <div className="flex-shrink-0">
             <Link to="/" className="flex items-center space-x-2 group">
               <img 
-                src="/logo.png" 
+                src="/PGU.png" 
                 alt="PGU Logo" 
                 className="h-12 w-auto transition-transform duration-300 group-hover:scale-105"
               />
@@ -63,7 +63,7 @@ const Navbar = () => {
               variant="outline"
               icon="lucide:log-in"
               size="sm"
-              className="hidden md:flex"
+              className="hidden md:flex md:cursor-pointer"
             >
               Member Login
             </Button>
