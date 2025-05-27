@@ -177,7 +177,7 @@ const CommitteeMembers = () => {
   ];
 
   return (
-    <section className="py-16 bg-gradient-to-b from-white to-[var(--gray-light)]">
+    <section className="py-16 bg-[var(--background)]">
       <div className="container mx-auto px-4">
         <SectionTitle
           title="Executive Committee"
@@ -187,9 +187,9 @@ const CommitteeMembers = () => {
         {/* Main Committee Members */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
           {mainCommittee.map((member) => (
-            <Card key={member.id} className="group hover:shadow-xl transition-all duration-300 overflow-hidden">
+            <Card key={member.id} className="group backdrop-blur-lg bg-transparent border border-white/20 shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden">
               <div className="relative w-32 h-32 mx-auto mt-6 mb-4">
-                <div className="absolute inset-0 bg-gradient-to-r from-[var(--accent)] to-[var(--primary)] rounded-full opacity-20 blur-sm transform group-hover:scale-110 transition-transform duration-300" />
+                <div className="absolute inset-0 bg-gradient-to-r from-[var(--accent)] to-[var(--accent-hover)] rounded-full opacity-10 blur-sm transform group-hover:scale-110 transition-transform duration-300" />
                 <div className="relative w-full h-full rounded-full overflow-hidden border-2 border-[var(--accent)]/20">
                   <img
                     src={member.image}
@@ -200,13 +200,13 @@ const CommitteeMembers = () => {
                 </div>
               </div>
               <div className="p-4 text-center">
-                <h3 className="text-lg font-bold group-hover:text-[var(--accent)] transition-colors">
+                <h3 className="text-lg font-bold group-hover:text-[var(--accent)] transition-colors text-white">
                   <Link to={`/blogs-events/${member.name.toLowerCase().replace(/\s+/g, '-')}`}>
                     {member.name}
                   </Link>
                 </h3>
                 <p className="text-sm text-[var(--accent)] mb-3">{member.role}</p>
-                <p className="text-sm text-gray-600">{member.bio}</p>
+                <p className="text-sm text-white">{member.bio}</p>
               </div>
             </Card>
           ))}
@@ -214,66 +214,46 @@ const CommitteeMembers = () => {
 
         {/* Directors */}
         <div className="mt-12">
-          <h2 className="text-xl font-bold text-center mb-8">Directors</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          <h2 className="text-xl font-bold text-center mb-8 text-white">Directors</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {directors.map((director) => (
-              <Card key={director.title} className="group hover:shadow-xl transition-all duration-300">
-                <div className="flex items-center space-x-2 mb-4">
-                  <div className="p-1.5 bg-[var(--accent)]/10 rounded-lg">
-                    <Icon icon={director.icon} className="text-[var(--accent)] w-5 h-5" />
-                  </div>
-                  <h3 className="text-lg font-bold group-hover:text-[var(--accent)] transition-colors">
-                    {director.title}
-                  </h3>
+              <div key={director.title} className="backdrop-blur-lg bg-white/10 border border-white/20 shadow-lg hover:shadow-xl transition-all duration-300 rounded-xl p-6 flex flex-col items-start">
+                <div className="flex items-center mb-4">
+                  <span className="p-2 rounded-lg bg-[var(--accent)]/10 mr-3">
+                    <Icon icon={director.icon} className="text-[var(--accent)] w-6 h-6" />
+                  </span>
+                  <span className="text-lg font-semibold text-white">{director.title}</span>
                 </div>
-                <div className="grid grid-cols-2 gap-3">
-                  {director.members.map((member, index) => (
-                    <div key={index} className="group/item">
-                      <div className="relative w-24 h-24 mx-auto mb-2">
-                        <div className="absolute inset-0 bg-gradient-to-r from-[var(--accent)] to-[var(--primary)] rounded-full opacity-20 blur-sm transform group-hover/item:scale-110 transition-transform duration-300" />
-                        <div className="relative w-full h-full rounded-full overflow-hidden border-2 border-[var(--accent)]/20">
-                          <img
-                            src={member.image}
-                            alt={member.name}
-                            className="w-full h-full object-cover transform group-hover/item:scale-110 transition-transform duration-300"
-                          />
-                          <div className="absolute inset-0 bg-black/40 opacity-0 group-hover/item:opacity-100 transition-opacity duration-300 rounded-full" />
-                        </div>
-                      </div>
-                      <Link 
-                        to={`/blogs-events/${member.name.toLowerCase().replace(/\s+/g, '-')}`}
-                        className="block text-center"
-                      >
-                        <span className="text-sm font-medium hover:text-[var(--accent)] transition-colors">
-                          {member.name}
-                        </span>
-                        <p className="text-xs text-gray-600">{member.role}</p>
-                      </Link>
-                    </div>
+                <ul className="w-full space-y-2">
+                  {director.members.map((member, idx) => (
+                    <li key={idx} className="flex flex-col border-b last:border-b-0 border-white/20 pb-2">
+                      <span className="font-medium text-white">{member.name}</span>
+                      <span className="text-xs text-white/90">{member.role}</span>
+                    </li>
                   ))}
-                </div>
-              </Card>
+                </ul>
+              </div>
             ))}
           </div>
         </div>
 
         {/* Regional Directors */}
         <div className="mt-12">
-          <h2 className="text-xl font-bold text-center mb-8">Regional Directors</h2>
+          <h2 className="text-xl font-bold text-center mb-8 text-white">Regional Directors</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {regions.map((region) => (
-              <Card key={region.title} className="group hover:shadow-xl transition-all duration-300">
+              <Card key={region.title} className="group backdrop-blur-lg bg-white/10 border border-white/20 shadow-lg hover:shadow-xl transition-all duration-300">
                 <div className="flex items-center space-x-2 mb-3">
                   <div className="p-1.5 bg-[var(--accent)]/10 rounded-lg">
                     <Icon icon={region.icon} className="text-[var(--accent)] w-5 h-5" />
                   </div>
-                  <h3 className="text-lg font-bold group-hover:text-[var(--accent)] transition-colors">
+                  <h3 className="text-lg font-bold group-hover:text-[var(--accent)] transition-colors text-white">
                     {region.title}
                   </h3>
                 </div>
                 <div className="space-y-1.5">
                   {region.members.map((member, index) => (
-                    <div key={index} className="flex items-center space-x-2 text-gray-600 hover:text-[var(--accent)] transition-colors">
+                    <div key={index} className="flex items-center space-x-2 text-white hover:text-[var(--accent)] transition-colors">
                       <Icon icon="lucide:user" className="w-4 h-4" />
                       <span className="text-sm">{member}</span>
                     </div>

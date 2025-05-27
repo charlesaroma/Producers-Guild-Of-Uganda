@@ -15,8 +15,8 @@ const Button = ({
   const baseStyles = 'inline-flex items-center justify-center font-medium transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed';
   
   const variants = {
-    primary: 'bg-white text-[var(--accent)] border border-[var(--accent)] hover:bg-[var(--accent)] hover:text-white shadow-sm hover:shadow-md',
-    secondary: 'bg-white text-[var(--primary)] border border-[var(--primary)] hover:bg-[var(--primary)] hover:text-white shadow-sm hover:shadow-md',
+    primary: 'bg-[var(--accent)] text-white border border-[var(--accent)] hover:bg-[var(--accent-hover)] hover:text-white shadow-sm hover:shadow-md',
+    secondary: 'bg-[var(--gray-light)] text-[var(--text-primary)] border border-[var(--card-border)] hover:bg-[var(--gray-dark)] hover:text-white shadow-sm hover:shadow-md',
     outline: 'bg-transparent text-[var(--accent)] border border-[var(--accent)] hover:bg-[var(--accent)]/10',
     ghost: 'bg-transparent text-[var(--accent)] hover:bg-[var(--accent)]/10',
     link: 'bg-transparent text-[var(--accent)] hover:underline p-0'

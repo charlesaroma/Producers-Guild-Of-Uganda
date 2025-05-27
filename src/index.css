@@ -14,10 +14,29 @@
 :root {
   --primary: #1a1a1a;    /* Black */
   --secondary: #ffffff;  /* White */
-  --accent: #2563eb;    /* Blue */
+  --accent: #2563eb;    /* Blue - A vibrant blue for cinematic pop */
   --accent-hover: #1d4ed8;
   --gray-light: #f3f4f6;
   --gray-dark: #374151;
+  --background: #ffffff;
+  --text-primary: #1a1a1a;
+  --text-secondary: #4b5563;
+  --card-bg: #ffffff;
+  --card-border: #e5e7eb;
+}
+
+[data-theme="dark"] {
+  --primary: #ffffff;    /* White */
+  --secondary: #1a1a1a;  /* Black */
+  --accent: #00e6e6;    /* Neon Teal/Cyan - for futuristic 3D/film feel */
+  --accent-hover: #00b3b3;
+  --gray-light: #1f2937;
+  --gray-dark: #9ca3af;
+  --background: #0d0d0d; /* Very dark background for cinematic depth */
+  --text-primary: #f3f4f6;
+  --text-secondary: #d1d5db;
+  --card-bg: #1f2937;
+  --card-border: #374151;
 }
 
 /* Custom scrollbar */
@@ -37,3 +56,26 @@
 ::-webkit-scrollbar-thumb:hover {
   background: var(--primary);
 }
+
+/* Base styles */
+body {
+  background-color: var(--background);
+  color: var(--text-primary);
+  overflow-x: hidden; /* Prevent horizontal scroll issues */
+}
+
+/* Card styles */
+.card {
+  background-color: var(--card-bg);
+  border: 1px solid var(--card-border);
+}
+
+/* Text styles */
+.text-primary {
+  color: var(--text-primary);
+}
+
+.text-secondary {
+  color: var(--text-secondary);
+}
+

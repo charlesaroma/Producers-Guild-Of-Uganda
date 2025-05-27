@@ -31,7 +31,7 @@ const MemberBenefits = () => {
   ];
 
   return (
-    <section className="py-20">
+    <section className="py-20 bg-[var(--background)]">
       <div className="container mx-auto px-4">
         <SectionTitle
           title="Member Benefits"
@@ -40,10 +40,10 @@ const MemberBenefits = () => {
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-12">
           {benefits.map((benefit) => (
-            <Card key={benefit.id} className="text-center">
+            <Card key={benefit.id} className="text-center backdrop-blur-lg bg-white/5 border border-white/10 shadow-[0_8px_32px_0_rgba(31,38,135,0.37)] hover:shadow-[0_8px_32px_0_rgba(31,38,135,0.5)] transition-all duration-300">
               <div className="text-4xl mb-4">{benefit.icon}</div>
-              <h3 className="text-xl font-bold mb-2">{benefit.title}</h3>
-              <p className="text-gray-600">{benefit.description}</p>
+              <h3 className="text-xl font-bold mb-2 text-white">{benefit.title}</h3>
+              <p className="text-white/80">{benefit.description}</p>
             </Card>
           ))}
         </div>

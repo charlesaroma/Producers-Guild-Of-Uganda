@@ -2,38 +2,38 @@ import React from 'react'
 
 const Contact = () => {
   return (
-    <div className="bg-gray-50 py-16">
+    <div className="bg-[var(--gray-light)] py-16">
       <div className="container mx-auto px-8">
-        <h2 className="text-3xl font-bold text-center mb-8">Contact Us</h2>
+        <h2 className="text-3xl font-bold text-center mb-8 text-[var(--text-primary)]">Contact Us</h2>
         <div className="max-w-2xl mx-auto">
           <form className="space-y-6">
             <div>
-              <label htmlFor="name" className="block text-sm font-medium text-gray-700">Name</label>
+              <label htmlFor="name" className="block text-sm font-medium text-[var(--text-primary)]">Name</label>
               <input
                 type="text"
                 id="name"
-                className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
+                className="mt-1 block w-full rounded-md bg-[var(--card-bg)] border-[var(--card-border)] text-[var(--text-primary)] shadow-sm focus:border-[var(--accent)] focus:ring-[var(--accent)]"
               />
             </div>
             <div>
-              <label htmlFor="email" className="block text-sm font-medium text-gray-700">Email</label>
+              <label htmlFor="email" className="block text-sm font-medium text-[var(--text-primary)]">Email</label>
               <input
                 type="email"
                 id="email"
-                className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
+                className="mt-1 block w-full rounded-md bg-[var(--card-bg)] border-[var(--card-border)] text-[var(--text-primary)] shadow-sm focus:border-[var(--accent)] focus:ring-[var(--accent)]"
               />
             </div>
             <div>
-              <label htmlFor="message" className="block text-sm font-medium text-gray-700">Message</label>
+              <label htmlFor="message" className="block text-sm font-medium text-[var(--text-primary)]">Message</label>
               <textarea
                 id="message"
                 rows="4"
-                className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
+                className="mt-1 block w-full rounded-md bg-[var(--card-bg)] border-[var(--card-border)] text-[var(--text-primary)] shadow-sm focus:border-[var(--accent)] focus:ring-[var(--accent)]"
               ></textarea>
             </div>
             <button
               type="submit"
-              className="w-full bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700 transition-colors"
+              className="w-full bg-[var(--accent)] text-white py-2 px-4 rounded-md hover:bg-[var(--accent-hover)] transition-colors"
             >
               Send Message
             </button>

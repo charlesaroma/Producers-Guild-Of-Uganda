@@ -11,7 +11,7 @@ import BlogEvents from './pages/5BlogEvents';
 function App() {
   return (
     <Router>
-      <div className="min-h-screen flex flex-col">
+      <div className="min-h-screen flex flex-col" data-theme="dark">
         <Navbar />
         <main className="flex-grow">
           <Routes>
@@ -23,7 +23,7 @@ function App() {
           </Routes>
         </main>
         <Footer />
-    </div>
+      </div>
     </Router>
   );
 }

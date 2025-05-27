@@ -16,7 +16,7 @@ const Navbar = () => {
   const location = useLocation();
 
   return (
-    <nav className="fixed w-full top-0 z-50 bg-white/80 backdrop-blur-md shadow-sm">
+    <nav className="fixed w-full top-0 z-50 bg-[var(--background)]/80 backdrop-blur-md shadow-sm border-b border-[var(--card-border)]">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-20">
           {/* Logo Section */}
@@ -27,7 +27,7 @@ const Navbar = () => {
                 alt="PGU Logo" 
                 className="h-12 w-auto transition-transform duration-300 group-hover:scale-105"
               />
-              <span className="hidden md:block text-xl font-bold text-[var(--primary)]">
+              <span className="hidden md:block text-lg font-bold text-[var(--text-primary)]">
                 PGU
               </span>
             </Link>
@@ -43,10 +43,10 @@ const Navbar = () => {
                     key={item.label}
                     to={item.href}
                     className={`
-                      px-4 py-2 text-[var(--primary)] transition-colors rounded-lg
+                      px-4 py-2 text-sm text-[var(--text-primary)] transition-colors rounded-lg
                       ${isActive 
                         ? 'text-[var(--accent)] font-medium border-b-2 border-[var(--accent)]' 
-                        : 'hover:text-[var(--accent)] hover:bg-gray-50'
+                        : 'hover:text-[var(--accent)] hover:bg-[var(--gray-light)]'
                       }
                     `}
                   >
@@ -70,12 +70,12 @@ const Navbar = () => {
             
             {/* Mobile Menu Button */}
             <button
-              className="md:hidden p-2 rounded-lg hover:bg-gray-100"
+              className="md:hidden p-2 rounded-lg hover:bg-[var(--gray-light)]"
               onClick={() => setIsOpen(!isOpen)}
             >
               <Icon 
                 icon={isOpen ? 'lucide:x' : 'lucide:menu'} 
-                className="w-6 h-6"
+                className="w-6 h-6 text-[var(--text-primary)]"
               />
             </button>
           </div>
@@ -83,7 +83,7 @@ const Navbar = () => {
 
         {/* Mobile Menu */}
         {isOpen && (
-          <div className="md:hidden py-4 border-t">
+          <div className="md:hidden py-4 border-t border-[var(--card-border)]">
             <div className="flex flex-col space-y-2">
               {menuItems.map((item) => {
                 const isActive = location.pathname === item.href;
@@ -92,10 +92,10 @@ const Navbar = () => {
                     key={item.label}
                     to={item.href}
                     className={`
-                      px-4 py-2 text-[var(--primary)] transition-colors rounded-lg
+                      px-4 py-2 text-[var(--text-primary)] transition-colors rounded-lg
                       ${isActive 
                         ? 'text-[var(--accent)] font-medium bg-[var(--accent)]/10' 
-                        : 'hover:text-[var(--accent)] hover:bg-gray-50'
+                        : 'hover:text-[var(--accent)] hover:bg-[var(--gray-light)]'
                       }
                     `}
                     onClick={() => setIsOpen(false)}

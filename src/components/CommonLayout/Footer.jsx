@@ -33,7 +33,7 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="bg-[var(--primary)] text-white pt-16 pb-8">
+    <footer className="bg-[var(--background)] text-[var(--text-primary)] pt-16 pb-8">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           <div>
@@ -42,20 +42,20 @@ const Footer = () => {
               alt="PGU Logo" 
               className="h-12 w-auto mb-4"
             />
-            <p className="text-gray-400">
+            <p className="text-[var(--text-secondary)]">
               The National Producers Guild of Uganda - Empowering film, TV and digital media producers.
             </p>
           </div>
           
           {footerSections.map((section) => (
             <div key={section.title}>
-              <h4 className="text-lg font-semibold mb-4">{section.title}</h4>
+              <h4 className="text-lg font-semibold mb-4 text-[var(--text-primary)]">{section.title}</h4>
               <ul className="space-y-2">
                 {section.links.map((link) => (
                   <li key={link.label}>
                     <a 
                       href={link.href}
-                      className="text-gray-400 hover:text-white transition-colors"
+                      className="text-[var(--text-secondary)] hover:text-[var(--accent)] transition-colors"
                     >
                       {link.label}
                     </a>
@@ -66,7 +66,7 @@ const Footer = () => {
           ))}
         </div>
         
-        <div className="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
+        <div className="border-t border-[var(--card-border)] mt-12 pt-8 text-center text-[var(--text-secondary)]">
           <p>&copy; {new Date().getFullYear()} Producers Guild Uganda. All rights reserved.</p>
         </div>
       </div>

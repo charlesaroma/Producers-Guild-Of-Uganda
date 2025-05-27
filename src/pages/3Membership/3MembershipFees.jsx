@@ -24,7 +24,7 @@ const MembershipFees = () => {
   ];
 
   return (
-    <section className="py-20 bg-[var(--gray-light)]">
+    <section className="py-20 bg-[var(--background)]">
       <div className="container mx-auto px-4">
         <SectionTitle
           title="Membership Fees"
@@ -33,17 +33,17 @@ const MembershipFees = () => {
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12 max-w-4xl mx-auto">
           {feeStructure.map((structure) => (
-            <Card key={structure.id}>
-              <h3 className="text-xl font-bold mb-6">{structure.title}</h3>
+            <Card key={structure.id} className="backdrop-blur-lg bg-white/5 border border-white/10 shadow-[0_8px_32px_0_rgba(31,38,135,0.37)] hover:shadow-[0_8px_32px_0_rgba(31,38,135,0.5)] transition-all duration-300">
+              <h3 className="text-xl font-bold mb-6 text-white">{structure.title}</h3>
               <div className="space-y-4">
                 {structure.fees.map((fee, index) => (
                   <div key={index} className="flex justify-between items-center">
-                    <span className="text-gray-600">{fee.label}</span>
-                    <span className="font-semibold">{fee.amount}</span>
+                    <span className="text-white/80">{fee.label}</span>
+                    <span className="font-semibold text-white">{fee.amount}</span>
                   </div>
                 ))}
               </div>
-              <p className="text-sm text-gray-500 mt-4">{structure.note}</p>
+              <p className="text-sm text-white/60 mt-4">{structure.note}</p>
             </Card>
           ))}
         </div>

@@ -3,7 +3,7 @@ import SectionTitle from '../../components/shared/SectionTitle';
 
 const BlogHero = () => {
   return (
-    <section className="pt-32 pb-20 bg-gradient-to-b from-[var(--gray-light)] to-white">
+    <section className="pt-32 pb-2 bg-gradient-to-b from-[var(--gray-light)] to-[var(--background)]">
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto text-center">
           <SectionTitle

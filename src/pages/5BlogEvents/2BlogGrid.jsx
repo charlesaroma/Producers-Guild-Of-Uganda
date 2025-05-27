@@ -57,7 +57,7 @@ const BlogGrid = () => {
       : events;
 
   return (
-    <section className="py-20">
+    <section className="py-10 bg-[var(--background)]">
       <div className="container mx-auto px-4">
         {/* Tabs */}
         <div className="flex justify-center space-x-4 mb-12">
@@ -80,7 +80,7 @@ const BlogGrid = () => {
         {/* Content Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {filteredContent.map((item) => (
-            <Card key={item.id} className="flex flex-col group hover:shadow-xl transition-all duration-300">
+            <Card key={item.id} className="flex flex-col group backdrop-blur-lg bg-white/5 border border-white/10 shadow-[0_8px_32px_0_rgba(31,38,135,0.37)] hover:shadow-[0_8px_32px_0_rgba(31,38,135,0.5)] transition-all duration-300">
               <div className="aspect-w-16 aspect-h-9 mb-4 overflow-hidden rounded-t-lg">
                 <img
                   src={item.image}
@@ -91,15 +91,15 @@ const BlogGrid = () => {
               <div className="p-6">
                 <div className="flex items-center space-x-2 mb-2">
                   <span className="text-sm text-[var(--accent)] font-medium">{item.category}</span>
-                  <span className="text-sm text-gray-500">•</span>
-                  <span className="text-sm text-gray-500">
+                  <span className="text-sm text-white/60">•</span>
+                  <span className="text-sm text-white/60">
                     {new Date(item.date).toLocaleDateString()}
                   </span>
                 </div>
-                <h3 className="text-xl font-bold mb-2 group-hover:text-[var(--accent)] transition-colors">
+                <h3 className="text-xl font-bold mb-2 text-white group-hover:text-[var(--accent)] transition-colors">
                   {item.title}
                 </h3>
-                <p className="text-gray-600 mb-4">{item.excerpt || item.description}</p>
+                <p className="text-white/80 mb-4">{item.excerpt || item.description}</p>
                 <Button 
                   variant="ghost" 
                   icon="lucide:arrow-right"

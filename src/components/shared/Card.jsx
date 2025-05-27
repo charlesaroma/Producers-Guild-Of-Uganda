@@ -9,7 +9,7 @@ const Card = ({
   return (
     <div 
       className={`
-        bg-white rounded-lg shadow-md p-6
+        bg-[var(--card-bg)] rounded-lg shadow-md p-6 border border-[var(--card-border)]
         ${hover ? 'hover:shadow-lg transition-shadow duration-300' : ''}
         ${className}
       `}

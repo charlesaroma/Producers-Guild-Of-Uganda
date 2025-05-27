@@ -26,7 +26,7 @@ const Mission = () => {
   ];
 
   return (
-    <section className="py-20">
+    <section className="py-20 bg-[var(--background)]">
       <div className="container mx-auto px-4">
         <SectionTitle
           title="Our Mission"
@@ -37,10 +37,10 @@ const Mission = () => {
           {missions.map((mission) => (
             <div 
               key={mission.id}
-              className="p-8 rounded-lg bg-white shadow-lg hover:shadow-xl transition-shadow"
+              className="p-8 rounded-lg backdrop-blur-lg bg-white/5 border border-white/10 shadow-[0_8px_32px_0_rgba(31,38,135,0.37)] hover:shadow-[0_8px_32px_0_rgba(31,38,135,0.5)] transition-all duration-300"
             >
-              <h3 className="text-xl font-bold mb-4">{mission.title}</h3>
-              <p className="text-gray-600">{mission.description}</p>
+              <h3 className="text-xl font-bold mb-4 text-white">{mission.title}</h3>
+              <p className="text-white/80">{mission.description}</p>
             </div>
           ))}
         </div>
